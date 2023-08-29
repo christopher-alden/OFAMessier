@@ -18,10 +18,65 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/SuisseIntl-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/SuisseIntl-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/SuisseIntl-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.suisse-light {
+  font-family: "suisse", sans-serif;
+  font-weight: 300;
+}
+
+.suisse-bold {
+  font-family: "suisse", sans-serif;
+  font-weight: 700;
+}
+
+.suisse {
+  font-family: "suisse", sans-serif;
+  font-weight: 400;
+}
+
+.glass {
+  background: 
+    radial-gradient(circle at center 25%, rgba(12, 12, 12, 0.212), rgba(0, 0, 0, 0.881)),
+    rgba(241, 241, 241, 0.142);
+  box-shadow: 
+    0 32px 32px 0 rgba(43, 43, 43, 0.062),
+    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.delayed {
+  transition-delay: 0.1s;
 }
