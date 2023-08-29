@@ -2,9 +2,10 @@ import ItemRows from "@/components/Category/ItemRows";
 import Clock from "@/components/Notify/Clock";
 import StatusNotification from "@/components/Notify/StatusNotification";
 
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col py-28 px-24 gap-8">
+    <main className="flex min-h-screen flex-col py-36 px-24 gap-8">
       <section className="flex w-full h-[6vh] justify-between items-center">
         <h1 className="text-4xl suisse-bold uppercase">
           Dashboard

@@ -24,10 +24,11 @@ const ItemRows = () => {
     return(
         <div className="w-full h-full rounded-xl">
             {items.map((item, index) => (
-                <div key={index} className="border-t-[1px] border-[#f1f1f150] py-6">
+                <div key={index} className="border-t-[1px] border-[#f1f1f150] py-6 justify-between flex">
                     <TextButton variant='list' size='default' className="hover:transform hover:translate-x-5 duration-200 transition-ease-in delayed" onClick={()=>handleRedirect(item.url)}>
                         {item.text}
                     </TextButton>
+                    <img className="w-12" src="https://img.icons8.com/external-thin-kawalan-studio/96/FFFFFF/external-arrow-up-right-arrows-thin-kawalan-studio.png" alt="external-arrow-up-right-arrows-thin-kawalan-studio"/>
                 </div>
             ))}
         </div>
