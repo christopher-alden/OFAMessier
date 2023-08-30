@@ -12,8 +12,9 @@ const CustomCursor = () => {
       container: document.body,
       speed: 0.3,
       className: "custom-cursor",
+      
     });
-
+    cursor.setSkewing(2);
     return () => {};
   }, []);
 

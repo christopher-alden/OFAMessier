@@ -3,9 +3,11 @@ import { useRouter } from 'next/navigation';
 const Logo = () => {
   const router = useRouter();
 
-  
+  const handleRedirect = (url:string) =>{
+    router.push(url)
+  }
   return (
-    <h1 className="text-black text-2xl suisse-bold">OFAMessier</h1>
+    <button className="text-black text-2xl suisse-bold" onClick={()=>handleRedirect('/')}>OFAMessier</button>
   )
 };
 

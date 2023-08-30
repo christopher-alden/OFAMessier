@@ -19,6 +19,7 @@ import {
 import { Fragment, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+
 const schedules = [
   {
     id: 1,
@@ -204,6 +205,7 @@ function Schedule({ schedule }:any) {
   let startDateTime = parseISO(schedule.startDatetime)
   let endDateTime = parseISO(schedule.endDatetime)
 
+  
   return (
     <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100 hover:text-black">
       <img
