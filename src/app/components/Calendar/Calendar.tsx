@@ -33,8 +33,8 @@ const schedules = [
     name: 'Michael Foster',
     imageUrl:
       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T09:00',
-    endDatetime: '2022-05-20T11:30',
+      startDatetime: '2023-08-10T13:00',
+      endDatetime: '2023-08-10T14:30',
   },
   {
     id: 3,
@@ -92,8 +92,8 @@ export default function Calendar() {
   )
 
   return (
-    <div>
-      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 suisse">
+    <div className=''>
+      <div className="max-w-md mx-auto md:max-w-4xl suisse">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-[#f1f1f150]">
           <div className="md:pr-14">
             <div className="flex items-center">
@@ -187,7 +187,7 @@ export default function Calendar() {
             <ol className="mt-4 space-y-1 text-md leading-6 text-[#f1f1f170]">
               {selectedDaySchedule.length > 0 ? (
                 selectedDaySchedule.map((schedule) => (
-                  <Schedule meeting={schedule} key={schedule.id} />
+                  <Schedule schedule={schedule} key={schedule.id} />
                 ))
               ) : (
                 <p>No schedules for today.</p>
@@ -200,25 +200,25 @@ export default function Calendar() {
   )
 }
 
-function Schedule({ meeting }:any) {
-  let startDateTime = parseISO(meeting.startDatetime)
-  let endDateTime = parseISO(meeting.endDatetime)
+function Schedule({ schedule }:any) {
+  let startDateTime = parseISO(schedule.startDatetime)
+  let endDateTime = parseISO(schedule.endDatetime)
 
   return (
-    <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
+    <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100 hover:text-black">
       <img
-        src={meeting.imageUrl}
+        src={schedule.imageUrl}
         alt=""
         className="flex-none w-10 h-10 rounded-full"
       />
       <div className="flex-auto">
-        <p className="text-gray-900">{meeting.name}</p>
+        <p className="text-[#f1f1f1] group-hover:text-black">{schedule.name}</p>
         <p className="mt-0.5">
-          <time dateTime={meeting.startDatetime}>
+          <time dateTime={schedule.startDatetime}>
             {format(startDateTime, 'h:mm a')}
           </time>{' '}
           -{' '}
-          <time dateTime={meeting.endDatetime}>
+          <time dateTime={schedule.endDatetime}>
             {format(endDateTime, 'h:mm a')}
           </time>
         </p>

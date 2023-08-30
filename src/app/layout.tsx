@@ -1,9 +1,9 @@
-import Navbar from '@/components/Navbar'
+import Navbar from '@/app/components/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import CustomCursor from '@/components/Cursor/CustomCursor'
-import MarqueeFooter from '@/components/Footer/MarqueeFooter'
+import CustomCursor from '@/app/components/Cursor/CustomCursor'
+import MarqueeFooter from '@/app/components/Footer/MarqueeFooter'
 
 const inter = Inter({ subsets: ['latin'] })
 
