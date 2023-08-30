@@ -1,3 +1,5 @@
+
+import Calendar from "@/components/Calendar/Calendar";
 import ItemRows from "@/components/Category/ItemRows";
 import Clock from "@/components/Notify/Clock";
 import StatusNotification from "@/components/Notify/StatusNotification";
@@ -14,9 +16,14 @@ export default function Home() {
           <Clock />
         </div>
       </section>
-      <aside className=" min-w-[400px] w-[40vw] min-h-[700px] h-[75vh] rounded-xl">
-        <ItemRows/>
-      </aside>
+      <section className="flex justify-between">
+        <div className=" min-w-[400px] w-[40vw] min-h-[700px] h-[75vh] rounded-xl">
+          <ItemRows/>
+        </div>
+        <div className="w-fit h-fit">
+          <Calendar/>
+        </div>
+      </section>
     </main>
   );
 }

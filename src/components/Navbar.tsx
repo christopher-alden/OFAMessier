@@ -11,6 +11,7 @@ const Navbar = () =>{
                     <TextButton variant='default' size='default' className="text-lg uppercase">schedule</TextButton>
                     <TextButton variant='default' size='default' className="text-lg uppercase">subjects</TextButton>
                     <TextButton variant='default' size='default' className="text-lg uppercase">ast</TextButton>
+                    <TextButton variant='default' size='default' className="text-lg uppercase">Timer</TextButton>
                 </section>
             </div>
         </div>
