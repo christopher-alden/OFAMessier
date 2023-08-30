@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import CustomCursor from '@/components/Cursor/CustomCursor'
+import MarqueeFooter from '@/components/Footer/MarqueeFooter'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <CustomCursor/>
         <Navbar/>
         {children}
+        <MarqueeFooter/>
       </body>
     </html>
   )

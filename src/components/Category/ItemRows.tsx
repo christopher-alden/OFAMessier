@@ -35,23 +35,22 @@ const ItemRows = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="border-t-[1px] border-[#f1f1f150] py-6 justify-between items-center flex"
+          className="border-t-[1px] border-[#f1f1f150] justify-between items-center flex"
         >
           <TextButton
             variant="list"
             size="default"
-            className="hover:transform hover:translate-x-5 duration-200 transition-all ease-in-out delayed"
+            className="hover:transform hover:pl-10 duration-200 transition-all ease-in-out delayed w-full h-full flex justify-between items-center py-8"
             onClick={() => handleRedirect(item.url)}
           >
             {item.text}
-          </TextButton>
-          <svg
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 mx-4"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -59,6 +58,8 @@ const ItemRows = () => {
               d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
             />
           </svg>
+          </TextButton>
+          
         </div>
       ))}
     </div>

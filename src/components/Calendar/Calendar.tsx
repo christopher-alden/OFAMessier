@@ -19,7 +19,7 @@ import {
 import { Fragment, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-const meetings = [
+const schedules = [
   {
     id: 1,
     name: 'Leslie Alexander',
@@ -87,8 +87,8 @@ export default function Calendar() {
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
   }
 
-  let selectedDayMeetings = meetings.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  let selectedDaySchedule = schedules.filter((schedule) =>
+    isSameDay(parseISO(schedule.startDatetime), selectedDay)
   )
 
   return (
@@ -97,7 +97,7 @@ export default function Calendar() {
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-[#f1f1f150]">
           <div className="md:pr-14">
             <div className="flex items-center">
-              <h2 className="flex-auto text-xl text-[#f1f1f1]">
+              <h2 className="flex-auto text-xl suisse-bold text-[#f1f1f1]">
                 {format(firstDayCurrentMonth, 'MMMM yyyy')}
               </h2>
               <button
@@ -167,8 +167,8 @@ export default function Calendar() {
                   </button>
 
                   <div className="w-1 h-1 mx-auto mt-1">
-                    {meetings.some((meeting) =>
-                      isSameDay(parseISO(meeting.startDatetime), day)
+                    {schedules.some((schedule) =>
+                      isSameDay(parseISO(schedule.startDatetime), day)
                     ) && (
                       <div className="w-1 h-1 rounded-full bg-[#dec0f1]"></div>
                     )}
@@ -185,12 +185,12 @@ export default function Calendar() {
               </time>
             </h2>
             <ol className="mt-4 space-y-1 text-md leading-6 text-[#f1f1f170]">
-              {selectedDayMeetings.length > 0 ? (
-                selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} />
+              {selectedDaySchedule.length > 0 ? (
+                selectedDaySchedule.map((schedule) => (
+                  <Schedule meeting={schedule} key={schedule.id} />
                 ))
               ) : (
-                <p>No meetings for today.</p>
+                <p>No schedules for today.</p>
               )}
             </ol>
           </section>
@@ -200,7 +200,7 @@ export default function Calendar() {
   )
 }
 
-function Meeting({ meeting }:any) {
+function Schedule({ meeting }:any) {
   let startDateTime = parseISO(meeting.startDatetime)
   let endDateTime = parseISO(meeting.endDatetime)
 
