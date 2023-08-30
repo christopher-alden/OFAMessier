@@ -10,11 +10,11 @@ const CustomCursor = () => {
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower({
       container: document.body,
-      speed: 0.3,
+      speed: 0.1,
       className: "custom-cursor",
       
     });
-    cursor.setSkewing(2);
+    cursor.setSkewing(6);
     return () => {};
   }, []);
 
