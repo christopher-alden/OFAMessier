@@ -26,46 +26,47 @@ const schedules = [
     name: 'Leslie Alexander',
     imageUrl:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2023-08-10T13:00',
-    endDatetime: '2023-08-10T14:30',
+    dayOfWeek: 4,
+    startTime: '13:00',
+    endTime: '14:30',
   },
   {
     id: 2,
     name: 'Michael Foster',
     imageUrl:
       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      startDatetime: '2023-08-10T13:00',
-      endDatetime: '2023-08-10T14:30',
+    dayOfWeek: 0,
+    startTime: '12:00',
+    endTime: '23:30',
   },
   {
     id: 3,
     name: 'Dries Vincent',
     imageUrl:
       'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
+    dayOfWeek: 1,
+    startTime: '13:00',
+    endTime: '14:30',
   },
   {
     id: 4,
     name: 'Leslie Alexander',
     imageUrl:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-06-09T13:00',
-    endDatetime: '2022-06-09T14:30',
+    dayOfWeek: 5,
+    startTime: '13:00',
+    endTime: '14:30',
   },
   {
     id: 5,
     name: 'Michael Foster',
     imageUrl:
       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-13T14:00',
-    endDatetime: '2022-05-13T14:30',
+    dayOfWeek: 2,
+    startTime: '13:00',
+    endTime: '14:30',
   },
 ]
-
-function classNames({...classes}:any) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Calendar() {
   let today = startOfToday()
@@ -88,9 +89,7 @@ export default function Calendar() {
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
   }
 
-  let selectedDaySchedule = schedules.filter((schedule) =>
-    isSameDay(parseISO(schedule.startDatetime), selectedDay)
-  )
+  let selectedDaySchedule = getSchedulesForDay(selectedDay);
 
   return (
     <div className=''>
@@ -168,9 +167,7 @@ export default function Calendar() {
                   </button>
 
                   <div className="w-1 h-1 mx-auto mt-1">
-                    {schedules.some((schedule) =>
-                      isSameDay(parseISO(schedule.startDatetime), day)
-                    ) && (
+                    {getSchedulesForDay(day).length > 0 && (
                       <div className="w-1 h-1 rounded-full bg-[#dec0f1]"></div>
                     )}
                   </div>
@@ -201,9 +198,15 @@ export default function Calendar() {
   )
 }
 
+function getSchedulesForDay(day: Date) {
+  const dayOfWeek = getDay(day);
+  return schedules.filter(schedule => schedule.dayOfWeek === dayOfWeek);
+}
+
+
 function Schedule({ schedule }:any) {
-  let startDateTime = parseISO(schedule.startDatetime)
-  let endDateTime = parseISO(schedule.endDatetime)
+  let startDateTime = parse(schedule.startTime, "HH:mm", new Date())
+  let endDateTime = parse(schedule.endTime, "HH:mm", new Date())
 
   
   return (

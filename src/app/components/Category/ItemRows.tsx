@@ -28,10 +28,39 @@ const ItemRows = () => {
 
   const handleRedirect = (url: string) => {
     window.open(url, "_blank");
+    
+  };
+
+  const handleQuickStart = () => {
+    window.open("https://socs1.binus.ac.id/messier/", "_blank");
+    window.open("https://academic-slc.apps.binus.ac.id", "_blank");
+    window.open("https://newbinusmaya.binus.ac.id/login", "_blank");
   };
 
   return (
     <div className="w-full h-full rounded-xl">
+      <TextButton
+            variant="list"
+            size="default"
+            className="hover:transform hover:pl-10 duration-200 transition-all ease-in-out delayed w-full flex justify-between items-center py-8"
+            onClick={() => handleQuickStart()}
+          >
+            Quick Start
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg>
+      </TextButton>
       {items.map((item, index) => (
         <div
           key={index}
