@@ -7,7 +7,10 @@ const Logo = () => {
     router.push(url)
   }
   return (
-    <button className="text-black text-2xl suisse-bold" onClick={()=>handleRedirect('/')}>OFAMessier</button>
+    <button className="text-black text-2xl suisse-bold flex flex-col" onClick={()=>handleRedirect('/')}>
+      <p className='suisse-light text-xs'>one for all</p>
+      <h1 className='-mt-1'>OFAMessier</h1>
+    </button>
   )
 };
 
