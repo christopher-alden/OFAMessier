@@ -1,3 +1,4 @@
+"use client"
 import TextButton from "../components/Buttons/TextButton"
 import Logo from "../components/Logo/Logo"
 

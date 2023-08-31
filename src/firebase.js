@@ -14,11 +14,19 @@ const firebaseConfig = {
 };
 
 
+let app;
+let auth;
+let storage;
+let db;
 
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth()
-export const storage = getStorage()
-export const db = getFirestore();
+if (typeof window !== 'undefined') {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth();
+  storage = getStorage();
+  db = getFirestore();
+}
+
+export { app, auth, storage, db };
 
 export const registerUser = async (initial, email, password) => {
   await setPersistence(auth, browserLocalPersistence);
