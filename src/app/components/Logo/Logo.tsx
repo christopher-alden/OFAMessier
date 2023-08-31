@@ -1,3 +1,4 @@
+"use client"
 import { useRouter } from 'next/navigation';
 import { ButtonHTMLAttributes } from "react";
 import { twMerge } from 'tailwind-merge';

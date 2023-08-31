@@ -27,7 +27,7 @@ const RegisterPage = () =>{
 
     return(
         <div className="min-h-screen min-w-screen flex flex-col justify-center items-center">
-            <div className="w-[500px] h-[480px] rounded-xl glass p-8 flex flex-col gap-4">
+            <div className="w-[500px] h-fit rounded-xl glass p-8 pb-12 flex flex-col gap-4">
                 <Logo className="text-white"/>
                 <section>
                     <form onSubmit={handleRegister} className="flex flex-col gap-2 ">

@@ -14,7 +14,7 @@ const Navbar = () =>{
         router.push(url);
     };
 
-    if (pathname == "/register") {
+    if (pathname == "/register" || pathname == "/login") {
         return <></>;
     }
     return(
