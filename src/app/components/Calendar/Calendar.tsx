@@ -19,6 +19,7 @@ import {
 import { Fragment, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+const noSchedule:any = "setIsHoliday(true)"
 
 const schedules = [
   {
@@ -182,13 +183,13 @@ export default function Calendar() {
                 {format(selectedDay, 'MMM dd, yyy')}
               </time>
             </h2>
-            <ol className="mt-4 space-y-1 text-md leading-6 text-[#f1f1f170]">
+            <ol className="mt-8 space-y-1 text-md leading-6 text-[#f1f1f170]">
               {selectedDaySchedule.length > 0 ? (
                 selectedDaySchedule.map((schedule) => (
                   <Schedule schedule={schedule} key={schedule.id} />
                 ))
               ) : (
-                <p>No schedules for today.</p>
+                <p dangerouslySetInnerHTML={{__html:noSchedule}} className='whitespace-pre-wrap'></p>
               )}
             </ol>
           </section>
@@ -211,11 +212,6 @@ function Schedule({ schedule }:any) {
   
   return (
     <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100 hover:text-black">
-      <img
-        src={schedule.imageUrl}
-        alt=""
-        className="flex-none w-10 h-10 rounded-full"
-      />
       <div className="flex-auto">
         <p className="text-[#f1f1f1] group-hover:text-black">{schedule.name}</p>
         <p className="mt-0.5">

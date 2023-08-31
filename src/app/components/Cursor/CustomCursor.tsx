@@ -15,6 +15,7 @@ const CustomCursor = () => {
       
     });
     cursor.setSkewing(6);
+    
     return () => {};
   }, []);
 

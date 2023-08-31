@@ -45,7 +45,7 @@ const ItemRows = () => {
             className="hover:transform hover:pl-10 duration-200 transition-all ease-in-out delayed w-full flex justify-between items-center py-8"
             onClick={() => handleQuickStart()}
           >
-            Quick Start
+            <p>Quick Start</p>
             <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

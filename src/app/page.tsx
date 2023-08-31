@@ -2,7 +2,6 @@
 import Calendar from "@/app/components/Calendar/Calendar";
 import ItemRows from "@/app/components/Category/ItemRows";
 import Clock from "@/app/components/Notify/Clock";
-import StatusNotification from "@/app/components/Notify/StatusNotification";
 
 
 export default function Home() {
