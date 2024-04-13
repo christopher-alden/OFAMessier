@@ -14,19 +14,24 @@ const firebaseConfig = {
 };
 
 
-let app;
-let auth;
-let storage;
-let db;
+// let app;
+// let auth;
+// let storage;
+// let db;∏
 
-if (typeof window !== 'undefined') {
-  app = initializeApp(firebaseConfig);
-  auth = getAuth();
-  storage = getStorage();
-  db = getFirestore();
-}
+// if (typeof window !== 'undefined') {
+//   app = initializeApp(firebaseConfig);
+//   auth = getAuth();
+//   storage = getStorage();
+//   db = getFirestore();
+// }
 
-export { app, auth, storage, db };
+// export { app, auth, storage, db };
+
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const storage = getStorage();
+export const db = getFirestore();
 
 export const registerUser = async (initial, email, password) => {
   await setPersistence(auth, browserLocalPersistence);

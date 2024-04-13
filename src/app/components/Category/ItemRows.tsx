@@ -17,12 +17,12 @@ const ItemRows = () => {
       url: "https://binusianorg-my.sharepoint.com/personal/christopher_silitonga_binus_ac_id/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fchristopher%5Fsilitonga%5Fbinus%5Fac%5Fid%2FDocuments%2F23%2D2&ga=1",
     },
     {
-      text: "VBL",
-      url: "https://binusianorg-my.sharepoint.com/:x:/r/personal/slc_binus_edu/_layouts/15/guestaccess.aspx?guestaccesstoken=YVEdXQQN2vQ7FI35XlVlOY19F2DEJE9gBa%2Bb%2FKUYBIk%3D&docid=2_088c51025a7a5475e9f1e760fd11b1be9&rev=1&e=PIvcVX",
+      text: "VBL Notion",
+      url: "https://academic600.notion.site/59ab21b2e92b4ef3b0160b4708585ed8?v=5aa32a0857a94941a77386b5df2917a8&pvs=4",
     },
     {
-      text: "Schedule Excel",
-      url: "https://binusianorg.sharepoint.com/:x:/r/sites/ResourceManagementLCAS2/_layouts/15/Doc.aspx?sourcedoc=%7B7B15B929-C39C-46B7-B0E7-8F669E5E02D1%7D&file=Teaching%20Schedule%20Odd%202023-2024%20(ALS).xlsx&action=default&mobileredirect=true",
+      text: "Shared",
+      url: "https://binusianorg.sharepoint.com/sites/ResourceManagementLCAS2/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FResourceManagementLCAS2%2FShared%20Documents%2FGeneral%2FShared%2F2022%2D2023%2F20%20Even%20Semester%2FFor%20ALL&p=true&ga=1",
     },
   ];
 

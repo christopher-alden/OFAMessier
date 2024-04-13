@@ -19,9 +19,9 @@ export default function Home() {
         <div className=" min-w-[400px] w-[40vw] min-h-[700px] h-[75vh] rounded-xl">
           <ItemRows/>
         </div>
-        <div className="w-fit h-fit">
+        {/* <div className="w-fit h-fit">
           <Calendar/>
-        </div>
+        </div> */}
       </section>
     </main>
   );
